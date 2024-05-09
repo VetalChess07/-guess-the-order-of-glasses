@@ -11,14 +11,27 @@ import { startGame } from './utils/startGame';
 
 
 function App() {
+  const [arrColors, setArrColors] = useState([
+    {color:'red', order: 1},
+    {color:'yellow', order: 2},
+    {color: 'green', order:3},
+    {color:'blue', order:4},
+    ])
   const [currectArr, setCurrectArr] = useState([])
   const [countCurrect, setCountCurrect] = useState(0);
   const[counterAttempts, setCounterAttempts] = useState<number>(0)
   const [startGameArr, setStartGameArr ] = useState([])
 
+  
+
   const onClick = ()=>{
+    setStartGameArr([])
     setCountCurrect(0)
     setCounterAttempts(1)
+    setArrColors([{color:'red', order: 1},
+    {color:'yellow', order: 2},
+    {color: 'green', order:3},
+    {color:'blue', order:4},])
     setCurrectArr(startGame())
   }
   useEffect(()=>{
@@ -37,7 +50,7 @@ function App() {
         :  <InnerGame startArr={startGameArr} arrTruf={currectArr} setCounterAttempts={setCounterAttempts} countCurrect={countCurrect} setCountCurrect={setCountCurrect} />
 
       }
-     <StartGame setStartGameArr={setStartGameArr} />
+     <StartGame arrColors={arrColors} setArrColors={setArrColors} startGameArr={startGameArr} setStartGameArr={setStartGameArr} />
     </div>
   );
 }

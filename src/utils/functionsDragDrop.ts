@@ -28,6 +28,7 @@ export function dragDropHandler(e:DragEvent<HTMLDivElement>, cupTarget:any, cups
  } ))
 }
 export function sortCup(a,b){
+
    if(a.order > b.order){
       return 1
    }

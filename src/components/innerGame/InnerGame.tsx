@@ -1,8 +1,7 @@
-import  { useState, DragEvent } from 'react'
+import  { useState, DragEvent, useEffect } from 'react'
 
 import { colorsArr } from '../../utils/colors'
 import CupsContainer from '../cupContainer/CupContainer'
-import WinnerBlock from '../../ui/winnerBlock/WinnerBlock'
 import Answer from '../../ui/answer/Answer'
 import ButtonsDefault from '../../ui/buttons/buttonsDefault/ButtonsDefault'
 
@@ -20,11 +19,13 @@ const {inner,cupsStyle, text, count } = style
 
 
 const InnerGame =  ({startArr, arrTruf, countCurrect, setCountCurrect,setCounterAttempts}) => {
-   console.log(startArr)
-   const [cups, setCups] = useState<ICup[] | null>(colorsArr)
+   
+   const [cups, setCups] = useState<ICup[] | null>([])
    const [curentCup, setCurentCup] = useState<ICup | null>(null)
-
-   console.log(curentCup)
+   useEffect(()=>{
+      setCups(startArr)
+   },[startArr])
+  
    const dragStart =(e:DragEvent<HTMLDivElement>, cup:any)=>{
       dragStartHandler(e, cup, setCurentCup)
    }

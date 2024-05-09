@@ -3,18 +3,21 @@ import Cup from '../../ui/cup/Cup'
 
 import { colorsArr } from '../../utils/colors'
 
-const StartGame = ({setStartGameArr}) => {
-   const [arr, setArr ] = useState(colorsArr)
+const StartGame = ({arrColors,setArrColors, startGameArr,setStartGameArr}) => {
 
    const onClick =(cup) =>{
-      setStartGameArr(prev => [...prev,  cup])
-      setArr(arr.filter(el => el.color !== cup.color))
+    const newCup = {
+      order: startGameArr.length,
+      color: cup.color
+    }
+      setStartGameArr(prev => [...prev,  newCup])
+      setArrColors(arrColors.filter(el => el.color !== cup.color))
    }
 
   return (
     <div>
       {
-        arr.map(el => <div key={el.color} onClick={() =>onClick(el)} >{el.color}</div>)
+        arrColors.map(el => <div key={el.color} onClick={() =>onClick(el)} >{el.color}</div>)
       }
     </div>
   )
