@@ -1,25 +1,25 @@
-import React,{FC} from 'react'
+import {FC} from 'react'
+
+import type { CupType } from '../../type/cup'
+
 import style from "./style.module.scss"
 
-import type { CupProps } from './type'
+const {cupClass, active} = style
 
-const {cup} = style
-
-const Cup:FC<CupProps> = ({color}) => {
-
- 
+const Cup:FC<CupType> = ({cup, className,onClickCupReplace,dragStartHandler, dragLeaveHandler, dragEndHandler, dragOverHandler, dragDropHandler}) => {
   return (
-    // <div onDragStart={} 
-    // onDragLeave={}
-    // onDragEnd={}
-    // onDragOver={}
-    // onDrop={}
-    // draggable={true} 
-    //   style={{background:color}}
-    //     className={cup}>
+    <div className={className ? `${cupClass} + ${active}` :cupClass}
+    style={{background:cup.color}}
+    onDragStart={(e) => dragStartHandler(e, cup)}
+    onDragLeave={dragLeaveHandler}
+    onDragEnd={dragEndHandler}
+    onDragOver={dragOverHandler}
+    onDrop={(e) => dragDropHandler(e, cup)}
+    draggable={true}
+    onClick={(e)=>onClickCupReplace(e, cup)}
+    >
       
-    // </div>
-    <div></div>
+    </div>
   )
 }
 

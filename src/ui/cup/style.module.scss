@@ -1,6 +1,11 @@
-.cup{
+.cupClass{
    width: 50px;
    height: 150px;
-   border: 2px solid #000;
+   border: 2px solid transparent;
    cursor: grab;
+   
+}
+.active{
+   
+   border: 3px dashed black;
 }
