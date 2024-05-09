@@ -4,6 +4,8 @@ export type CupColorType= {
 
 export type CupType = {
    cup: any
+   className:string
+   onClickCupReplace:any
    dragStartHandler: (e: React.DragEvent<HTMLDivElement>, color: CupColorType) => void;
    dragLeaveHandler: (e: React.DragEvent<HTMLDivElement>) => void;
    dragEndHandler: (e: React.DragEvent<HTMLDivElement>) => void;
