@@ -18,10 +18,12 @@ const {inner,cupsStyle, text, count } = style
 
 
 
-const InnerGame =  ({startArr, arrTruf, countCurrect, setCountCurrect,setCounterAttempts}) => {
+const InnerGame =  ({startArr, arrTruf, countCurrect, setCountCurrect,setCounterAttempts, counterAttempts}) => {
    
    const [cups, setCups] = useState<ICup[] | null>([])
    const [curentCup, setCurentCup] = useState<ICup | null>(null)
+   
+  
    useEffect(()=>{
       setCups(startArr)
    },[startArr])
@@ -68,7 +70,7 @@ const InnerGame =  ({startArr, arrTruf, countCurrect, setCountCurrect,setCounter
          <ButtonsDefault onClick={()=>onClikСheckingCups(cups,arrTruf,setCounterAttempts,setCountCurrect) }>Проверка!</ButtonsDefault>
    
          <p className={text} >у вас щас правильно стоят <span className={count}> {countCurrect}</span> стаканов</p>
-
+         <p>вы уже пытались {counterAttempts}</p>
        
          
          

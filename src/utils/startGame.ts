@@ -2,9 +2,9 @@ import { colorsArr } from "./colors";
 
 
 
-export function startGame(){
+export function startGame(startGameArr){
  
-   const secretArr =colorsArr.map(el => el.color);
+   const secretArr =startGameArr.map(el => el.color);
 
    function randomSortArr(arr:string[]){
       return arr.sort(() => Math.random() - 0.5)
