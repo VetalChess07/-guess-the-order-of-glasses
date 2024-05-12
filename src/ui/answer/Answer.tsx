@@ -14,7 +14,6 @@ const Answer = ({arrAnswer}) => {
        {
          open &&
             <>
-            закрыть
                <ul>
                   {arrAnswer.map(el =>
                      <li  key={el}>{el}</li>

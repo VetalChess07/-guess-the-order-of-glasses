@@ -1,0 +1,19 @@
+.inner{
+   left: 0;
+   top: 0;
+   width: 100dvw;
+   height: 100dvh;
+   background-color: rgba( 0,0,0,.5);
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   position: fixed;
+}
+.modal{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   width: 50%;
+   height: 50%;
+   background-color: red;
+}

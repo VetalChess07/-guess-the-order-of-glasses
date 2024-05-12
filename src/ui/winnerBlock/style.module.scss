@@ -1,12 +1,22 @@
 .winner{
    width: 100%;
-   height: 100%;
+   height: 100dvh;
    display: flex;
    justify-content: center;
    align-items: center;
    flex-direction: column;
-   background-color: orange;
-   tilte
-text
- span{}
+   gap: 20px;
+   .tilte{
+      font-size: 32px;
+      color: coral;
+
+   }
+.text{
+   
+   color:gray;
+   .span{
+      color: green;
+   }
+}
+ 
 }

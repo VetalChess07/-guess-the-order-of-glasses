@@ -1,0 +1,43 @@
+.cupClass{
+ 
+	border-left: 20px solid transparent;
+	border-right: 20px solid transparent;
+	border-bottom: 2px solid ;
+	width: 40px;
+   transition: all .3s;
+
+}
+.active{
+   width: 35px;
+}
+.inner{
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 20px;
+}
+.innerBtn{
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 20px;
+}
+@media (max-width:580px) {
+	.cupClass{
+ 
+		border-left: 10px solid transparent;
+		border-right: 10px solid transparent;
+		border-bottom: 2px solid ;
+		width: 40px;
+		transition: all .3s;
+	}
+	.innerBtn{
+		display: flex;
+		flex-direction: column;
+		button{
+			width: 100%;
+		}
+	}
+}

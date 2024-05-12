@@ -1,12 +1,8 @@
 .inner{
    display: flex;
    align-items: center;
+   justify-content: space-around;
+   flex-wrap: wrap;
    gap: 30px;
 }
 
-.cup{
-   width: 50px;
-   height: 150px;
-   border: 2px solid #000;
-   cursor: grab;
-}
